@@ -12,7 +12,7 @@
           <div :class="`input ${inputChose1}`" placeholder="UserName"><input type="text"  v-model="value2" @focus="focusDeal1" @blur="blurDeal1"></div>
           <div :class="`input ${inputChose2}`" placeholder="Password"><input type="text" v-model="value3" @focus="focusDeal2" @blur="blurDeal2" ></div>
           <div :class="`input ${inputChose3}`" id="repeat" placeholder="Repeat"><input v-model="value4" type="text" @focus="focusDeal3" @blur="blurDeal3"></div>
-          <button>LOGIN</button>
+          <button>{{ buttonText }}</button>
         </form>
       </div>
     </div>
@@ -35,6 +35,7 @@ export default {
       value2:'',
       value3:'',
       value4:'',
+      buttonText:'LOGIN'
     }
   },
   methods: {
@@ -42,11 +43,13 @@ export default {
       this.switchColor='active';
       this.switchColor2='';
       this.contentChose='login';
+      this.buttonText='LOGIN';
     },
     switchSign() {
       this.switchColor='';
       this.switchColor2='active'
       this.contentChose='signup';
+      this.buttonText='SIGN UP';
     },
     focusDeal(){
       this.inputChose='focus';
